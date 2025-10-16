@@ -1,10 +1,10 @@
-import {Entity, PrimaryGeneratedColumn, Column, PrimaryColumn} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class User {
-    @PrimaryColumn("varchar")
-    login: string;
+  @PrimaryColumn('varchar')
+  login: string;
 
-    @Column("varchar")
-    passwordHash: string;
+  @Column('varchar')
+  passwordHash: string;
 }
