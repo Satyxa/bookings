@@ -24,4 +24,14 @@ export class BookingRepository {
       where: { user_id },
     });
   }
+  async getStatistic(): Promise<any> {
+    return await this.BookingRepository.createQueryBuilder('booking')
+      .select('booking.user_id', 'user_id')
+      .addSelect('COUNT(*)', 'booking_count')
+      .addSelect(`RANK() OVER (ORDER BY COUNT(*) DESC)`, 'place')
+      .addSelect('MIN(booking.event_id)', 'event_id')
+      .groupBy('booking.user_id')
+      .orderBy('booking_count', 'DESC')
+      .getRawMany();
+  }
 }

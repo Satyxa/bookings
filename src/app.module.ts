@@ -21,6 +21,7 @@ import { GetBookingsForUserHandler } from './bookings/use-cases/get.bookings.com
 import { GetEventsHandler } from './events/use-cases/get.events.command';
 import { CreateEventHandler } from './events/use-cases/create.event.command';
 import { GetEventHandler } from './events/use-cases/get.event.command';
+import { GetStatisticHandler } from './bookings/use-cases/get.statistic.command';
 
 const models = [User, Booking, Event];
 const controllers = [
@@ -44,6 +45,7 @@ const useCases = [
   GetEventsHandler,
   CreateEventHandler,
   GetEventHandler,
+  GetStatisticHandler,
 ];
 
 @Module({
